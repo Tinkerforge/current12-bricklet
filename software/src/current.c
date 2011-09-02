@@ -29,6 +29,7 @@
 #include "bricklib/utility/util_definitions.h"
 #include "bricklib/bricklet/bricklet_config.h"
 #include "bricklib/com/i2c/i2c_eeprom/i2c_eeprom_common.h"
+#include "brickletlib/bricklet_simple.h"
 #include "config.h"
 
 #define MAX_ADC_VALUE ((1  << 12) - 1)
