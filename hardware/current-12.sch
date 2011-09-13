@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Do 25 Aug 2011 13:13:57 CEST
+EESchema Schematic File Version 2  date Di 06 Sep 2011 12:44:01 CEST
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -30,14 +30,13 @@ LIBS:atmel
 LIBS:contrib
 LIBS:valves
 LIBS:tinkerforge
-LIBS:current-12-cache
 EELAYER 25  0
 EELAYER END
 $Descr A4 11700 8267
 encoding utf-8
 Sheet 1 1
 Title "Current12 Bricklet"
-Date "25 aug 2011"
+Date "6 sep 2011"
 Rev "1.0"
 Comp "Tinkerforge GmbH"
 Comment1 "Licensed under CERN OHL v.1.1"
@@ -189,7 +188,7 @@ L C C3
 U 1 1 4CE2ACA2
 P 7600 3750
 F 0 "C3" H 7650 3850 50  0000 L CNN
-F 1 "100nF" H 7650 3650 50  0000 L CNN
+F 1 "DNP" H 7650 3650 50  0000 L CNN
 F 2 "0603" H 7600 3750 60  0001 C CNN
 	1    7600 3750
 	1    0    0    -1  
