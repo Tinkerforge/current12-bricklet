@@ -5,8 +5,8 @@ HOST = "localhost"
 PORT = 4223
 UID = "ABCD" # Change to your UID
 
-from ip_connection import IPConnection
-from bricklet_current12 import Current12
+from tinkerforge.ip_connection import IPConnection
+from tinkerforge.bricklet_current12 import Current12
 
 # Callback for current greater than 5A
 def cb_reached(current):
