@@ -11,19 +11,17 @@ public class ExampleSimple {
 	public static void main(String args[]) throws Exception {
 		// Create connection to brickd
 		IPConnection ipcon = new IPConnection(host, port); // Can throw IOException
-
 		BrickletCurrent12 c12 = new BrickletCurrent12(UID); // Create device object
 
-		// Add device to ip connection
+		// Add device to IP connection
 		ipcon.addDevice(c12); // Can throw IPConnection.TimeoutException
 		// Don't use device before it is added to a connection
-		
 
 		// Get current current (unit is mA)
 		short current = c12.getCurrent(); // Can throw IPConnection.TimeoutException
 
 		System.out.println("Current: " + current/1000.0 + " A");
-		
+
 		System.out.println("Press ctrl+c to exit");
 		ipcon.joinThread();
 	}

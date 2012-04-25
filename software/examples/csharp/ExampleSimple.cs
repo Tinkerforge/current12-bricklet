@@ -10,9 +10,8 @@ class Example
 	{
 		IPConnection ipcon = new IPConnection(HOST, PORT); // Create connection to brickd
 		BrickletCurrent12 c12 = new BrickletCurrent12(UID); // Create device object
-		ipcon.AddDevice(c12); // Add device to ip connection
+		ipcon.AddDevice(c12); // Add device to IP connection
 		// Don't use device before it is added to a connection
-
 
 		// Get current current (unit is mA)
 		short current;
@@ -22,5 +21,5 @@ class Example
 
 		System.Console.WriteLine("Press ctrl+c to exit");
 		ipcon.JoinThread();
-    }
+	}
 }
