@@ -43,6 +43,7 @@ int main() {
 	// Configure threshold for "greater than 5A" (unit is mA)
 	current12_set_current_callback_threshold(&c, '>', 5*1000, 0);
 
-	printf("Press ctrl+c to close\n");
-	ipcon_join_thread(&ipcon); // Join mainloop of IP connection
+	printf("Press key to exit\n");
+	getchar();
+	ipcon_destroy(&ipcon);
 }
