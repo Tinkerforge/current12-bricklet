@@ -13,11 +13,11 @@ def cb_reached(current):
     print('Current is greater than 5A: ' + str(current/1000.0))
 
 if __name__ == "__main__":
-    ipcon = IPConnection(HOST, PORT) # Create IP connection to brickd
+    ipcon = IPConnection() # Create IP connection
+    c = Current12(UID, ipcon) # Create device object
 
-    c = Current12(UID) # Create device object
-    ipcon.add_device(c) # Add device to IP connection
-    # Don't use device before it is added to a connection
+    ipcon.connect(HOST, PORT) # Connect to brickd
+    # Don't use device before ipcon is connected
 
     # Get threshold callbacks with a debounce time of 10 seconds (10000ms)
     c.set_debounce_period(10000)
