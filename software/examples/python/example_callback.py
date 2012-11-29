@@ -28,4 +28,3 @@ if __name__ == "__main__":
     c.register_callback(c.CALLBACK_CURRENT, cb_current)
 
     raw_input('Press key to exit\n') # Use input() in Python 3
-    ipcon.destroy()

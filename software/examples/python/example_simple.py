@@ -21,4 +21,3 @@ if __name__ == "__main__":
     print('Current: ' + str(current/1000.0) + ' A')
 
     raw_input('Press key to exit\n') # Use input() in Python 3
-    ipcon.destroy()
