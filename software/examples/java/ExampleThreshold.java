@@ -22,7 +22,7 @@ public class ExampleThreshold {
 		c12.setCurrentCallbackThreshold('>', (short)(5*1000), (short)0);
 
 		// Add and implement current reached listener (called if current is greater than 5A)
-		c12.addListener(new BrickletCurrent12.CurrentReachedListener() {
+		c12.addCurrentReachedListener(new BrickletCurrent12.CurrentReachedListener() {
 			public void currentReached(short current) {
 				System.out.println("Current is greater than 5A: " + current/1000.0);
 			}
