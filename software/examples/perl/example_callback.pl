@@ -1,14 +1,14 @@
 #!/usr/bin/perl
 
 use Tinkerforge::IPConnection;
-use Tinkerforge::BrickletAnalogIn;
+use Tinkerforge::BrickletCurrent12;
 
 use constant HOST => 'localhost';
 use constant PORT => 4223;
 use constant UID => 'abd2'; # Change to your UID
 
-my $ipcon = IPConnection->new(); # Create IP connection
-my $c12 = BrickletAnalogIn->new(&UID, $ipcon); # Create device object
+my $ipcon = Tinkerforge::IPConnection->new(); # Create IP connection
+my $c12 = Tinkerforge::BrickletCurrent12->new(&UID, $ipcon); # Create device object
 
 # Callback function for current callback (parameter has unit mA)
 sub cb_current
