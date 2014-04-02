@@ -14,10 +14,9 @@ $ipcon->connect(&HOST, &PORT); # Connect to brickd
 # Don't use device before ipcon is connected
 
 # Get current current (unit is mA)
-my $current = $c12->get_current();
+my $current = $c12->get_current()/1000.0;
+print "Current: $current A\n";
 
-print "\nCurrent: ".$current/1000.0." A\n";
-
-print "\nPress any key to exit...\n";
+print "Press any key to exit...\n";
 <STDIN>;
 $ipcon->disconnect();
