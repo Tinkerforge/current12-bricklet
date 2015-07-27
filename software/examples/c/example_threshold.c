@@ -20,8 +20,8 @@ int main() {
 	ipcon_create(&ipcon);
 
 	// Create device object
-	Current12 c12;
-	current12_create(&c12, UID, &ipcon);
+	Current12 c;
+	current12_create(&c, UID, &ipcon);
 
 	// Connect to brickd
 	if(ipcon_connect(&ipcon, HOST, PORT) < 0) {
@@ -31,16 +31,16 @@ int main() {
 	// Don't use device before ipcon is connected
 
 	// Get threshold callbacks with a debounce time of 10 seconds (10000ms)
-	current12_set_debounce_period(&c12, 10000);
+	current12_set_debounce_period(&c, 10000);
 
 	// Register threshold reached callback to function cb_current_reached
-	current12_register_callback(&c12,
+	current12_register_callback(&c,
 	                            CURRENT12_CALLBACK_CURRENT_REACHED,
 	                            (void *)cb_current_reached,
 	                            NULL);
 
 	// Configure threshold for "greater than 5 A" (unit is mA)
-	current12_set_current_callback_threshold(&c12, '>', 5*1000, 0);
+	current12_set_current_callback_threshold(&c, '>', 5*1000, 0);
 
 	printf("Press key to exit\n");
 	getchar();

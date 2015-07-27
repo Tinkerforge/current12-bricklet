@@ -20,8 +20,8 @@ int main() {
 	ipcon_create(&ipcon);
 
 	// Create device object
-	Current12 c12;
-	current12_create(&c12, UID, &ipcon);
+	Current12 c;
+	current12_create(&c, UID, &ipcon);
 
 	// Connect to brickd
 	if(ipcon_connect(&ipcon, HOST, PORT) < 0) {
@@ -33,10 +33,10 @@ int main() {
 	// Set period for current callback to 1s (1000ms)
 	// Note: The current callback is only called every second
 	//       if the current has changed since the last call!
-	current12_set_current_callback_period(&c12, 1000);
+	current12_set_current_callback_period(&c, 1000);
 
 	// Register current callback to function cb_current
-	current12_register_callback(&c12,
+	current12_register_callback(&c,
 	                            CURRENT12_CALLBACK_CURRENT,
 	                            (void *)cb_current,
 	                            NULL);
