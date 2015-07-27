@@ -4,15 +4,15 @@ class Example
 {
 	private static string HOST = "localhost";
 	private static int PORT = 4223;
-	private static string UID = "ABC"; // Change to your UID
+	private static string UID = "XYZ"; // Change to your UID
 
-	// Callback for current greater than 5A
-	static void ReachedCB(BrickletCurrent12 sender, short current)
+	// Callback function for current greater than 5 A (parameter has unit mA)
+	static void CurrentReachedCB(BrickletCurrent12 sender, short current)
 	{
-		System.Console.WriteLine("Current is greater than 5A: " + current/1000.0 + "A");
+		System.Console.WriteLine("Current: " + current/1000.0 + " A");
 	}
 
-	static void Main() 
+	static void Main()
 	{
 		IPConnection ipcon = new IPConnection(); // Create IP connection
 		BrickletCurrent12 c12 = new BrickletCurrent12(UID, ipcon); // Create device object
@@ -20,13 +20,13 @@ class Example
 		ipcon.Connect(HOST, PORT); // Connect to brickd
 		// Don't use device before ipcon is connected
 
-		// Get threshold callbacks with a debounce time of 1 seconds (1000ms)
-		c12.SetDebouncePeriod(1000);
+		// Get threshold callbacks with a debounce time of 10 seconds (10000ms)
+		c12.SetDebouncePeriod(10000);
 
-		// Register threshold reached callback to function ReachedCB
-		c12.CurrentReached += ReachedCB;
+		// Register threshold reached callback to function CurrentReachedCB
+		c12.CurrentReached += CurrentReachedCB;
 
-		// Configure threshold for "greater than 5A" (unit is mA)
+		// Configure threshold for "greater than 5 A" (unit is mA)
 		c12.SetCurrentCallbackThreshold('>', 5*1000, 0);
 
 		System.Console.WriteLine("Press enter to exit");
