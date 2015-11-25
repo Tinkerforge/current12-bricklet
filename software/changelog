@@ -1,11 +1,11 @@
-1.0.0:
+2011-10-06: 1.0.0 (2f35c5a)
 - Initial version
 
-1.1.0:
+2012-02-15: 1.1.0 (30a42be)
 - Add support for tick types
 
-2.0.0:
+2013-01-17: 2.0.0 (a71fe8d)
 - Support for Protocol 2.0
 
-2.0.1:
+2013-05-15: 2.0.1 (5ec2c9c)
 - Don't send threshold callback twice
