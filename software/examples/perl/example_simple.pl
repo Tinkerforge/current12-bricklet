@@ -5,7 +5,7 @@ use Tinkerforge::BrickletCurrent12;
 
 use constant HOST => 'localhost';
 use constant PORT => 4223;
-use constant UID => 'XYZ'; # Change to your UID
+use constant UID => 'XYZ'; # Change XYZ to the UID of your Current12 Bricklet
 
 my $ipcon = Tinkerforge::IPConnection->new(); # Create IP connection
 my $c = Tinkerforge::BrickletCurrent12->new(&UID, $ipcon); # Create device object
