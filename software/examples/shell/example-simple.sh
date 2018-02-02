@@ -3,5 +3,5 @@
 
 uid=XYZ # Change XYZ to the UID of your Current12 Bricklet
 
-# Get current current (unit is mA)
+# Get current current
 tinkerforge call current12-bricklet $uid get-current

@@ -16,7 +16,7 @@ c = BrickletCurrent12.new UID, ipcon # Create device object
 ipcon.connect HOST, PORT # Connect to brickd
 # Don't use device before ipcon is connected
 
-# Register current callback (parameter has unit mA)
+# Register current callback
 c.register_callback(BrickletCurrent12::CALLBACK_CURRENT) do |current|
   puts "Current: #{current/1000.0} A"
 end
