@@ -3,4 +3,4 @@
 setup:
 	# Get current current
 	subscribe to tinkerforge/response/current12_bricklet/XYZ/get_current
-	publish '' to tinkerforge/request/current12_bricklet/XYZ/get_current 
+	publish '' to tinkerforge/request/current12_bricklet/XYZ/get_current
